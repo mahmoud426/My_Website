@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.75.1" />
+
+
+<title>The Capacities Of Different Homeless Shelter Sectors - A Hugo website</title>
+<meta property="og:title" content="The Capacities Of Different Homeless Shelter Sectors - A Hugo website">
+
+
+  <link href='../../../../favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="../../../../css/fonts.css" media="all">
+<link rel="stylesheet" href="../../../../css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="../../../../" class="nav-logo">
+    <img src="../../../../images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="https://github.com/rstudio/blogdown">GitHub</a></li>
+    
+    <li><a href="../../../../2015-07-23-r-markdown.2015-07-23-r-markdown/">My report</a></li>
+    
+    <li><a href="../../../../references.bib/">References</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">The Capacities Of Different Homeless Shelter Sectors</h1>
+
+    
+    <span class="article-date">2020-09-24</span>
+    
+
+    <div class="article-content">
+      
+
+
+<pre class="r"><code>library(devtools)</code></pre>
+<pre><code>## Loading required package: usethis</code></pre>
+<pre class="r"><code>library(decon)
+library(ggplot2)
+library(tibble)
+library(ggthemes)
+library(RColorBrewer)</code></pre>
+<div id="abstract" class="section level1">
+<h1>Abstract</h1>
+<p>This is a statistical analysis of the capacity of homeless shelters in the City of Toronto. This analysis aims to find the different capacities in homeless shelter sectors. This will alow for a better understanding of which sectors have excess capacities and which are struggling to meet the demand.</p>
+</div>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>Homelesness is a serious issue around the country and Toronto is not exempt from that. On any given night there are 9,200 homeless people in Toronto^1. This leaves
+The dataset I selected to use was the Daily Shelter Occupancy Data. I found it very interesting to find out which shelter sector’s are more or less catered for through analysing their excess capacity. I found this very interesting as I have made use of the violin geom in order to add the demension of the capacity density’s</p>
+<div id="the-dataset-being-used-is-the-daily-shelter-occupancy-data-obtained-from-the-toronto-open-data-portal-providing-a-listing-of-all-active-shelters-in-the-city-of-toronto-area-in-2020.-this-dataset-contains-data-from-each-shelter-ranging-from-the" class="section level2">
+<h2>The dataset being used is the daily shelter occupancy data obtained from the Toronto Open Data Portal providing a listing of all active shelters in the City of Toronto area in 2020. This dataset contains data from each shelter ranging from the</h2>
+<p>The dataset contains data from 01-01-2020 to 21-09-2020</p>
+<p>ggplot(data = Daily_shelter_occupancy_current_, aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) + geom_point(aes(fill = SECTOR)) + geom_violin(scale=“area”) + theme_solarized()</p>
+<p>```</p>
+</div>
+<div id="the-graph-below-displays-the-available-capacity-for-different-sectors-of-shelters-every-day-from-01-01-2020-to-21-09-2020.-the-sectors-refer-to-the-gender-or-age-group-the-shelter-caters-to." class="section level2">
+<h2>The graph below displays the available capacity for different sectors of shelters every day from 01-01-2020 to 21-09-2020. The sectors refer to the gender or age group the shelter caters to.</h2>
+</div>
+<div id="the-data-is-very-interesting-as-it-shows-us-each-sector-shelters-ability-to-accept-people.-this-data-also-gives-us-insight-into-the" class="section level2">
+<h2>The data is very interesting as it shows us each sector shelter’s ability to accept people. This data also gives us insight into the</h2>
+</div>
+</div>
+<div id="citations" class="section level1">
+<h1>Citations</h1>
+<ol style="list-style-type: decimal">
+<li><a href="https://www.fredvictor.org/facts-about-homelessness-in-toronto/#" class="uri">https://www.fredvictor.org/facts-about-homelessness-in-toronto/#</a>:~:text=Facts%20about%20Homelessness%20in%20Toronto,homeless%20on%20any%20given%20night.</li>
+</ol>
+<p>H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New
+York, 2016.</p>
+<p>A BibTeX entry for LaTeX users is</p>
+<p><span class="citation">@Book</span>{,
+author = {Hadley Wickham},
+title = {ggplot2: Elegant Graphics for Data Analysis},
+publisher = {Springer-Verlag New York},
+year = {2016},
+isbn = {978-3-319-24277-4},
+url = {<a href="https://ggplot2.tidyverse.org" class="uri">https://ggplot2.tidyverse.org</a>},
+}</p>
+<p>Jeffrey B. Arnold (2019). ggthemes: Extra Themes, Scales and Geoms for ‘ggplot2’.
+R package version 4.2.0. <a href="https://CRAN.R-project.org/package=ggthemes" class="uri">https://CRAN.R-project.org/package=ggthemes</a></p>
+<p>A BibTeX entry for LaTeX users is</p>
+<p><span class="citation">@Manual</span>{,
+title = {ggthemes: Extra Themes, Scales and Geoms for ‘ggplot2’},
+author = {Jeffrey B. Arnold},
+year = {2019},
+note = {R package version 4.2.0},
+url = {<a href="https://CRAN.R-project.org/package=ggthemes" class="uri">https://CRAN.R-project.org/package=ggthemes</a>},
+}</p>
+<p>Hadley Wickham, Jim Hester and Winston Chang (2020). devtools: Tools to Make
+Developing R Packages Easier. R package version 2.3.2.
+<a href="https://CRAN.R-project.org/package=devtools" class="uri">https://CRAN.R-project.org/package=devtools</a></p>
+<p>A BibTeX entry for LaTeX users is</p>
+<p><span class="citation">@Manual</span>{,
+title = {devtools: Tools to Make Developing R Packages Easier},
+author = {Hadley Wickham and Jim Hester and Winston Chang},
+year = {2020},
+note = {R package version 2.3.2},
+url = {<a href="https://CRAN.R-project.org/package=devtools" class="uri">https://CRAN.R-project.org/package=devtools</a>},
+}</p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="../../../../index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="../../../../images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>
+

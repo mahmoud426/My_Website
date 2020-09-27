@@ -3,7 +3,6 @@ title: "The Capacities Of Different Homeless Shelter Sectors"
 author: "Mahmoud Elsheikh"
 date: '2020-09-24T21:13:14-05:00'
 categories: R
-bibliography: references.bib
 tags:
 - R Markdown
 - plot
@@ -29,22 +28,70 @@ library(RColorBrewer)
 This is a statistical analysis of the capacity of homeless shelters in the City of Toronto. This analysis aims to find the different capacities in homeless shelter sectors. This will alow for a better understanding of which sectors have excess capacities and which are struggling to meet the demand.
 
 # Introduction
-The dataset I selected to use was the Daily Shelter Occupancy Data. I found it very interesting to find out which shelter sector's are more or less catered for through analysing their excess capacity. I found this very interesting as I have made use of the violin geom in order to add the demension of the capacity density's 
+Homelesness is a serious issue around the country and Toronto is not exempt from that. On any given night there are 9,200 homeless people in Toronto^1 in need of a place to stay. While homeless shelter's take in a significant proportion of the homeless, they are unable to cater to evrybody which you will see in the data below. The dataset I selected to use was the Daily Shelter Occupancy Data. I found it very interesting to find out which shelter sector's are more or less catered for through analysing their excess capacity. I found this very interesting as I have made use of the violin geom in order to add the a third dimension to the graph of the capacity density's.
 
 
 
-## The dataset being used is the daily shelter occupancy data obtained from the Toronto Open Data Portal providing a listing of all active shelters in the City of Toronto area in 2020. This dataset contains data from each shelter ranging from the 
-The dataset contains data from 01-01-2020 to 21-09-2020
+The dataset being used is the daily shelter occupancy data obtained from the Toronto Open Data Portal providing a listing of all active shelters in the City of Toronto area in 2020. This dataset contains data from each shelter ranging from 01-01-2020 to 21-09-2020
+
+The graph below displays the available capacity for different sectors of shelters every day from 01-01-2020 to 21-09-2020. The sectors refer to the gender or age group  the shelter caters to. 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
-ggplot(data = Daily_shelter_occupancy_current_, aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) + geom_point(aes(fill = SECTOR)) + geom_violin(scale="area") + theme_solarized()
-
-
+ggplot(data = Daily.shelter.occupancy_current., aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) + geom_point(aes(fill = SECTOR)) + geom_violin(scale="area") + theme_solarized()
 ```
 
-## The graph below displays the available capacity for different sectors of shelters every day from 01-01-2020 to 21-09-2020. The sectors refer to the gender or age group  the shelter caters to. 
+
 ## The data is very interesting as it shows us each sector shelter's ability to accept people. This data also gives us insight into the 
+
+
+# Citations
+
+1. https://www.fredvictor.org/facts-about-homelessness-in-toronto/#:~:text=Facts%20about%20Homelessness%20in%20Toronto,homeless%20on%20any%20given%20night.
+
+  H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New
+  York, 2016.
+
+A BibTeX entry for LaTeX users is
+
+  @Book{,
+    author = {Hadley Wickham},
+    title = {ggplot2: Elegant Graphics for Data Analysis},
+    publisher = {Springer-Verlag New York},
+    year = {2016},
+    isbn = {978-3-319-24277-4},
+    url = {https://ggplot2.tidyverse.org},
+  }
+
+
+  Jeffrey B. Arnold (2019). ggthemes: Extra Themes, Scales and Geoms for 'ggplot2'.
+  R package version 4.2.0. https://CRAN.R-project.org/package=ggthemes
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {ggthemes: Extra Themes, Scales and Geoms for 'ggplot2'},
+    author = {Jeffrey B. Arnold},
+    year = {2019},
+    note = {R package version 4.2.0},
+    url = {https://CRAN.R-project.org/package=ggthemes},
+  }
+
+
+
+Hadley Wickham, Jim Hester and Winston Chang (2020). devtools: Tools to Make
+  Developing R Packages Easier. R package version 2.3.2.
+  https://CRAN.R-project.org/package=devtools
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {devtools: Tools to Make Developing R Packages Easier},
+    author = {Hadley Wickham and Jim Hester and Winston Chang},
+    year = {2020},
+    note = {R package version 2.3.2},
+    url = {https://CRAN.R-project.org/package=devtools},
+  }
 
 
