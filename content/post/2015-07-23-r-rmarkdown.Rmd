@@ -1,10 +1,13 @@
 ---
 title: "The Capacities Of Different Homeless Shelter Sectors"
 author: "Mahmoud Elsheikh"
-date: 2015-07-23T21:13:14-05:00
-categories: ["R"]
-bibliography: "references.bib"
-tags: ["R Markdown", "plot", "regression"]
+date: '2015-07-23T21:13:14-05:00'
+categories: R
+bibliography: references.bib
+tags:
+- R Markdown
+- plot
+- regression
 ---
 ---
 title: "The Capacities Of Different Homeless Shelter Sectors"
@@ -33,7 +36,7 @@ The dataset contains data from 01-01-2020 to 21-09-2020
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
-ggplot(data = Daily.shelter.occupancy, aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) + geom_point(aes(fill = SECTOR)) + geom_violin(scale="area") + theme_solarized()
+ggplot(data = Daily_shelter_occupancy_current_, aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) + geom_point(aes(fill = SECTOR)) + geom_violin(scale="area") + theme_solarized()
 
 
 ```
