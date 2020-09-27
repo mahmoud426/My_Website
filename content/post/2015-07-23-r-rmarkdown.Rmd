@@ -1,7 +1,7 @@
 ---
 title: "The Capacities Of Different Homeless Shelter Sectors"
 author: "Mahmoud Elsheikh"
-date: '2015-07-23T21:13:14-05:00'
+date: '2020-09-24T21:13:14-05:00'
 categories: R
 bibliography: references.bib
 tags:
@@ -25,8 +25,11 @@ library(RColorBrewer)
 ```
 
 
+# Abstract
+This is a statistical analysis of the capacity of homeless shelters in the City of Toronto. This analysis aims to find the different capacities in homeless shelter sectors. This will alow for a better understanding of which sectors have excess capacities and which are struggling to meet the demand.
+
 # Introduction
-## The dataset I selected to use was the Daily Shelter Occupancy Data. I found it very interesting to find out which shelter sector's are more or less catered for as far as having excess capacity. I found this very interesting as I have made use of the violin geom in order to add the demension of the capacity density's 
+The dataset I selected to use was the Daily Shelter Occupancy Data. I found it very interesting to find out which shelter sector's are more or less catered for through analysing their excess capacity. I found this very interesting as I have made use of the violin geom in order to add the demension of the capacity density's 
 
 
 
