@@ -35,7 +35,7 @@ Daily <-read.csv('/cloud/project/content/post/Daily_shelter_occupancy_current.cs
 
 The dataset being used is the daily shelter occupancy data obtained from the Toronto Open Data Portal providing a listing of all active shelters in the City of Toronto area in 2020. This dataset contains data from each shelter ranging from 01-01-2020 to 21-09-2020
 
-##The graph below displays the available capacity for different sectors of shelters every day from 01-01-2020 to 21-09-2020. The sectors refer to the gender or age group  the shelter caters to. 
+## The graph below displays the available capacity for different sectors of shelters every day from 01-01-2020 to 21-09-2020. The sectors refer to the gender or age group  the shelter caters to. 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -45,7 +45,7 @@ ggplot(data = Daily, aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) +
   theme_solarized()
 ```
 
-##The following graph displays which cities have shelters that cater to each sector
+## The following graph displays which cities have shelters that cater to each sector
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 ggplot(data = Daily, aes(x = SHELTER_CITY, y = SECTOR, color = SHELTER_CITY)) +
   geom_point(aes(stat = 'identity')) 
@@ -80,26 +80,26 @@ The second plot shows the available shelter sectors available in each city. Whil
 * It would be interesting to evaluate how the quality of shelters affect their capacity to find out if better quality shelters are in need.
 
 
-##To see the code used visit:
+## To see the code used visit:
 https://naughty-northcutt-10f775.netlify.app/2020/09/24/code-used/
 
 
 # Citations
 
 * Homelesness data toronto: https://www.fredvictor.org/facts-about-homelessness-in-toronto/#:~:text=Facts%20about%20Homelessness%20in%20Toronto,homeless%20on%20any%20given%20night.
-*https://www.homelesshub.ca/community-profile/toronto
-*https://www.cbc.ca/news/canada/toronto/ontario-homeless-housing-1.5714698
+* https://www.homelesshub.ca/community-profile/toronto
+* https://www.cbc.ca/news/canada/toronto/ontario-homeless-housing-1.5714698
 
-*GGplot2 cheat sheet: https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf
+* GGplot2 cheat sheet: https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf
 
-*GGplot aesthetics: http://www.sthda.com/english/wiki/ggplot2-colors-how-to-change-colors-automatically-and-manually#change-colors-by-groups
+* GGplot aesthetics: http://www.sthda.com/english/wiki/ggplot2-colors-how-to-change-colors-automatically-and-manually#change-colors-by-groups
 
 * The Dataset: https://open.toronto.ca/dataset/daily-shelter-occupancy/
 
 *  H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New
   York, 2016.
 
-*A BibTeX entry for LaTeX users is
+* A BibTeX entry for LaTeX users is
 
   @Book{,
     author = {Hadley Wickham},
@@ -114,7 +114,7 @@ https://naughty-northcutt-10f775.netlify.app/2020/09/24/code-used/
   Jeffrey B. Arnold (2019). ggthemes: Extra Themes, Scales and Geoms for 'ggplot2'.
   R package version 4.2.0. https://CRAN.R-project.org/package=ggthemes
 
-*A BibTeX entry for LaTeX users is
+* A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {ggthemes: Extra Themes, Scales and Geoms for 'ggplot2'},
@@ -130,7 +130,7 @@ Hadley Wickham, Jim Hester and Winston Chang (2020). devtools: Tools to Make
   Developing R Packages Easier. R package version 2.3.2.
   https://CRAN.R-project.org/package=devtools
 
-*A BibTeX entry for LaTeX users is
+* A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {devtools: Tools to Make Developing R Packages Easier},
@@ -142,11 +142,11 @@ Hadley Wickham, Jim Hester and Winston Chang (2020). devtools: Tools to Make
 
 
 
- * Xiao-Feng Wang, Bin Wang (2011). Deconvolution Estimation in
+ Xiao-Feng Wang, Bin Wang (2011). Deconvolution Estimation in
   Measurement Error Models: The R Package decon. Journal of Statistical
   Software, 39(10), 1-24. URL http://www.jstatsoft.org/v39/i10/.
 
-A BibTeX entry for LaTeX users is
+* A BibTeX entry for LaTeX users is
 
   @Article{,
     title = {Deconvolution Estimation in Measurement Error Models: The {R} Package {decon}},
@@ -161,7 +161,7 @@ A BibTeX entry for LaTeX users is
 
 
 
-*  Erich Neuwirth (2014). RColorBrewer: ColorBrewer Palettes. R package
+* Erich Neuwirth (2014). RColorBrewer: ColorBrewer Palettes. R package
   version 1.1-2.
 
 A BibTeX entry for LaTeX users is
