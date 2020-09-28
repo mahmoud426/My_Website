@@ -13,7 +13,7 @@
       <pubDate>Thu, 24 Sep 2020 21:13:14 -0500</pubDate>
       
       <guid>/2020/09/24/code-used/</guid>
-      <description>Code used library(devtools) library(decon) library(ggplot2) library(tibble) library(ggthemes) library(RColorBrewer) Daily &amp;lt;-read.csv(&#39;/cloud/project/content/post/Daily_shelter_occupancy_current.csv&#39;) ggplot(data = Daily, aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) + geom_point(aes(fill = SECTOR)) + geom_violin(scale=&amp;quot;area&amp;quot;) + theme_solarized() ggplot(data = Daily, aes(x = SHELTER_CITY, y = SECTOR, color = SHELTER_CITY)) + geom_point(aes(stat = &#39;identity&#39;)) </description>
+      <description> Code used library(devtools) library(decon) library(ggplot2) library(tibble) library(ggthemes) library(RColorBrewer) Daily &amp;lt;-read.csv(&amp;#39;/cloud/project/content/post/Daily_shelter_occupancy_current.csv&amp;#39;) ggplot(data = Daily, aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) + geom_point(aes(fill = SECTOR)) + geom_violin(scale=&amp;quot;area&amp;quot;) + theme_solarized() ggplot(data = Daily, aes(x = SHELTER_CITY, y = SECTOR, color = SHELTER_CITY)) + geom_point(aes(stat = &amp;#39;identity&amp;#39;))   </description>
     </item>
     
     <item>
@@ -23,16 +23,7 @@
       
       <guid>/2020/09/24/understanding-and-analyzing-the-capacities-of-different-homeless-shelter-sectors-in-the-greater-toronto-area/</guid>
       <description>Abstract This is a statistical analysis of the capacity of homeless shelters in the City of Toronto. This analysis aims to find the different capacities in homeless shelter sectors. This will alow for a better understanding of which sectors have excess capacities and which are struggling to meet the demand.
- Introduction Homelesness is a serious issue around the country and Toronto is not exempt from this. On any given night there are 9,200 homeless people in Toronto in need of a place to stay.</description>
-    </item>
-    
-    <item>
-      <title>Lorem Ipsum</title>
-      <link>/2015/01/01/lorem-ipsum/</link>
-      <pubDate>Thu, 01 Jan 2015 13:09:13 -0600</pubDate>
-      
-      <guid>/2015/01/01/lorem-ipsum/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+ Introduction Homelesness is a serious issue around the country and Toronto is not exempt from this. With the economic hardships of COVID-19, evictions are on the rise and will continue to rise as we wait for a vaccine.</description>
     </item>
     
   </channel>

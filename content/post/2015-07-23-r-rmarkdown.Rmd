@@ -20,7 +20,7 @@ output: html_document
 This is a statistical analysis of the capacity of homeless shelters in the City of Toronto. This analysis aims to find the different capacities in homeless shelter sectors. This will alow for a better understanding of which sectors have excess capacities and which are struggling to meet the demand.
 
 # Introduction
-Homelesness is a serious issue around the country and Toronto is not exempt from this. On any given night there are 9,200 homeless people in Toronto in need of a place to stay. While homeless shelter's take in a significant proportion of the homeless, they are unable to cater to everybody which you will see in the data below. The Dataset I selected to use was the Daily Shelter Occupancy Data. I found it very interesting to find out which shelter sector's are more or less catered for through analyzing their excess capacity. I go on to show which Cities in the GTA cater for each sector of shelter and analyze the potential for greater capacity required for different sectors.
+Homelesness is a serious issue around the country and Toronto is not exempt from this. With the economic hardships of COVID-19, evictions are on the rise and will continue to rise as we wait for a vaccine. On any given night there are 9,200 homeless people in Toronto in need of a place to stay and this number is expected to rise in the coming months. It is important to ensure that these shelters have the capacity to deal with this potential rise in homelessness. While homeless shelter's take in a significant proportion of the homeless, they are unable to cater to everyone which will be shown in the data below. The Dataset I selected to use was the Daily Shelter Occupancy Data. I found it very interesting to find out which shelter sector's are more or less catered for through analyzing their excess capacity. I go on to show which Cities in the GTA cater for each sector of shelter and analyze the potential for greater capacity required for different sectors.
 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -35,7 +35,7 @@ Daily <-read.csv('/cloud/project/content/post/Daily_shelter_occupancy_current.cs
 
 The dataset being used is the daily shelter occupancy data obtained from the Toronto Open Data Portal providing a listing of all active shelters in the City of Toronto area in 2020. This dataset contains data from each shelter ranging from 01-01-2020 to 21-09-2020
 
-The graph below displays the available capacity for different sectors of shelters every day from 01-01-2020 to 21-09-2020. The sectors refer to the gender or age group  the shelter caters to. 
+##The graph below displays the available capacity for different sectors of shelters every day from 01-01-2020 to 21-09-2020. The sectors refer to the gender or age group  the shelter caters to. 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -45,7 +45,7 @@ ggplot(data = Daily, aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) +
   theme_solarized()
 ```
 
-The following graph displays which cities have shelters that cater to each sector
+##The following graph displays which cities have shelters that cater to each sector
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 ggplot(data = Daily, aes(x = SHELTER_CITY, y = SECTOR, color = SHELTER_CITY)) +
   geom_point(aes(stat = 'identity')) 
@@ -55,7 +55,7 @@ ggplot(data = Daily, aes(x = SHELTER_CITY, y = SECTOR, color = SHELTER_CITY)) +
 # Analysis
 The data is very interesting as it shows us each sector shelter's ability to accept people. This data also gives us insight into which Sectors are catered for in excess and which are not. The violin geom makes it clear that Youth shelter's have limited capacity as you can see the wide base and the dot plot geom shows that these shelters have the lowest maximum capacity with a maximum of 120. This is similar to the case with shelters for women shown by the wide base. Family shelters appear to be well catered for with multiple shelters with well over 250 excess places.
 
-The second plot shows the available shelter sectors available in each city. While Toronto caters to all five, Etobicoke and North York only have youth shelters. This could be an issue as it makes the Cities unable to cater to members the remaining sectors in the area. Scarbrough does not have any Youth or Familly shelters which could be an issue as the first graph shows that youth shelters tend to be low in excess capacity. 
+The second plot shows the available shelter sectors available in each city. While Toronto caters to all five, Etobicoke and North York only have youth shelters. This could be an issue as it makes the Cities unable to cater to members the remaining sectors in the area. Scarbrough does not have any Youth or Familly shelters which could be an issue as the first graph shows that youth shelters tend to be low in excess capacity.
 
  
 
@@ -77,21 +77,29 @@ The second plot shows the available shelter sectors available in each city. Whil
 
 * While my second graph displayed which sectors are available in each City, I was not able to find a method to display the magnitude of how many were available which would allow us to better analyze the data.
 
+* It would be interesting to evaluate how the quality of shelters affect their capacity to find out if better quality shelters are in need.
+
+
+##To see the code used visit:
+https://naughty-northcutt-10f775.netlify.app/2020/09/24/code-used/
+
 
 # Citations
 
 * Homelesness data toronto: https://www.fredvictor.org/facts-about-homelessness-in-toronto/#:~:text=Facts%20about%20Homelessness%20in%20Toronto,homeless%20on%20any%20given%20night.
+*https://www.homelesshub.ca/community-profile/toronto
+*https://www.cbc.ca/news/canada/toronto/ontario-homeless-housing-1.5714698
 
 *GGplot2 cheat sheet: https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf
 
 *GGplot aesthetics: http://www.sthda.com/english/wiki/ggplot2-colors-how-to-change-colors-automatically-and-manually#change-colors-by-groups
 
-* The dataset: https://open.toronto.ca/dataset/daily-shelter-occupancy/
+* The Dataset: https://open.toronto.ca/dataset/daily-shelter-occupancy/
 
-  H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New
+*  H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New
   York, 2016.
 
-A BibTeX entry for LaTeX users is
+*A BibTeX entry for LaTeX users is
 
   @Book{,
     author = {Hadley Wickham},
@@ -106,7 +114,7 @@ A BibTeX entry for LaTeX users is
   Jeffrey B. Arnold (2019). ggthemes: Extra Themes, Scales and Geoms for 'ggplot2'.
   R package version 4.2.0. https://CRAN.R-project.org/package=ggthemes
 
-A BibTeX entry for LaTeX users is
+*A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {ggthemes: Extra Themes, Scales and Geoms for 'ggplot2'},
@@ -122,7 +130,7 @@ Hadley Wickham, Jim Hester and Winston Chang (2020). devtools: Tools to Make
   Developing R Packages Easier. R package version 2.3.2.
   https://CRAN.R-project.org/package=devtools
 
-A BibTeX entry for LaTeX users is
+*A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {devtools: Tools to Make Developing R Packages Easier},
@@ -133,3 +141,34 @@ A BibTeX entry for LaTeX users is
   }
 
 
+
+ * Xiao-Feng Wang, Bin Wang (2011). Deconvolution Estimation in
+  Measurement Error Models: The R Package decon. Journal of Statistical
+  Software, 39(10), 1-24. URL http://www.jstatsoft.org/v39/i10/.
+
+A BibTeX entry for LaTeX users is
+
+  @Article{,
+    title = {Deconvolution Estimation in Measurement Error Models: The {R} Package {decon}},
+    author = {Xiao-Feng Wang and Bin Wang},
+    journal = {Journal of Statistical Software},
+    year = {2011},
+    volume = {39},
+    number = {10},
+    pages = {1--24},
+    url = {http://www.jstatsoft.org/v39/i10/},
+  }
+
+
+
+*  Erich Neuwirth (2014). RColorBrewer: ColorBrewer Palettes. R package
+  version 1.1-2.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {RColorBrewer: ColorBrewer Palettes},
+    author = {Erich Neuwirth},
+    year = {2014},
+    note = {R package version 1.1-2},
+  }
