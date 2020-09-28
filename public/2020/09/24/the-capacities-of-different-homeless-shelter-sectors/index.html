@@ -75,33 +75,31 @@
       
 
 
-<pre class="r"><code>library(devtools)</code></pre>
-<pre><code>## Loading required package: usethis</code></pre>
-<pre class="r"><code>library(decon)
-library(ggplot2)
-library(tibble)
-library(ggthemes)
-library(RColorBrewer)</code></pre>
 <div id="abstract" class="section level1">
 <h1>Abstract</h1>
 <p>This is a statistical analysis of the capacity of homeless shelters in the City of Toronto. This analysis aims to find the different capacities in homeless shelter sectors. This will alow for a better understanding of which sectors have excess capacities and which are struggling to meet the demand.</p>
 </div>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>Homelesness is a serious issue around the country and Toronto is not exempt from that. On any given night there are 9,200 homeless people in Toronto^1. This leaves
-The dataset I selected to use was the Daily Shelter Occupancy Data. I found it very interesting to find out which shelter sector’s are more or less catered for through analysing their excess capacity. I found this very interesting as I have made use of the violin geom in order to add the demension of the capacity density’s</p>
-<div id="the-dataset-being-used-is-the-daily-shelter-occupancy-data-obtained-from-the-toronto-open-data-portal-providing-a-listing-of-all-active-shelters-in-the-city-of-toronto-area-in-2020.-this-dataset-contains-data-from-each-shelter-ranging-from-the" class="section level2">
-<h2>The dataset being used is the daily shelter occupancy data obtained from the Toronto Open Data Portal providing a listing of all active shelters in the City of Toronto area in 2020. This dataset contains data from each shelter ranging from the</h2>
-<p>The dataset contains data from 01-01-2020 to 21-09-2020</p>
-<p>ggplot(data = Daily_shelter_occupancy_current_, aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) + geom_point(aes(fill = SECTOR)) + geom_violin(scale=“area”) + theme_solarized()</p>
-<p>```</p>
+<p>Homelesness is a serious issue around the country and Toronto is not exempt from that. On any given night there are 9,200 homeless people in Toronto^1 in need of a place to stay. While homeless shelter’s take in a significant proportion of the homeless, they are unable to cater to evrybody which you will see in the data below. The dataset I selected to use was the Daily Shelter Occupancy Data. I found it very interesting to find out which shelter sector’s are more or less catered for through analysing their excess capacity. I found this very interesting as I have made use of the violin geom in order to add the a third dimension to the graph of the capacity density’s.</p>
+<pre class="r"><code>library(devtools)</code></pre>
+<pre><code>## Loading required package: usethis</code></pre>
+<pre class="r"><code>library(decon)
+library(ggplot2)
+library(tibble)
+library(ggthemes)
+library(RColorBrewer)
+Daily &lt;-read.csv(&#39;/cloud/project/content/post/Daily_shelter_occupancy_current.csv&#39;)</code></pre>
+<p>The dataset being used is the daily shelter occupancy data obtained from the Toronto Open Data Portal providing a listing of all active shelters in the City of Toronto area in 2020. This dataset contains data from each shelter ranging from 01-01-2020 to 21-09-2020</p>
+<p>The graph below displays the available capacity for different sectors of shelters every day from 01-01-2020 to 21-09-2020. The sectors refer to the gender or age group the shelter caters to.</p>
+<pre class="r"><code>ggplot(data = Daily, aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) + geom_point(aes(fill = SECTOR)) + geom_violin(scale=&quot;area&quot;) + theme_solarized()</code></pre>
+<p><img src="../../../../post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = Daily, aes(x = SECTOR, y = SHELTER_CITY, fill = SHELTER_CITY)) + geom_point(aes(fill = SECTOR))</code></pre>
+<p><img src="../../../../post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
 </div>
-<div id="the-graph-below-displays-the-available-capacity-for-different-sectors-of-shelters-every-day-from-01-01-2020-to-21-09-2020.-the-sectors-refer-to-the-gender-or-age-group-the-shelter-caters-to." class="section level2">
-<h2>The graph below displays the available capacity for different sectors of shelters every day from 01-01-2020 to 21-09-2020. The sectors refer to the gender or age group the shelter caters to.</h2>
-</div>
-<div id="the-data-is-very-interesting-as-it-shows-us-each-sector-shelters-ability-to-accept-people.-this-data-also-gives-us-insight-into-the" class="section level2">
-<h2>The data is very interesting as it shows us each sector shelter’s ability to accept people. This data also gives us insight into the</h2>
-</div>
+<div id="analysis" class="section level1">
+<h1>Analysis</h1>
+<p>The data is very interesting as it shows us each sector shelter’s ability to accept people. This data also gives us insight into which Sectors are catered for in excess and which are not. The violin geom makes it clear that Youth shelter’s have limited capacity as you can see the wide base and the dot plot geom shows that these shelters have the lowest maximum capacity with a maximum of 120. This is similar to the case with shelters for women shown by the wide base. Family shelters appear to be well catered for with multiple shelters with well over 250 excess places.</p>
 </div>
 <div id="citations" class="section level1">
 <h1>Citations</h1>
