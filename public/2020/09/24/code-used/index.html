@@ -6,8 +6,8 @@
 <meta name="generator" content="Hugo 0.75.1" />
 
 
-<title>Introduction - A Hugo website</title>
-<meta property="og:title" content="Introduction - A Hugo website">
+<title>Code Used - A Hugo website</title>
+<meta property="og:title" content="Code Used - A Hugo website">
 
 
   <link href='../../../../favicon.ico' rel='icon' type='image/x-icon'/>
@@ -65,14 +65,14 @@
     <span class="article-duration">1 min read</span>
     
 
-    <h1 class="article-title">Introduction</h1>
+    <h1 class="article-title">Code Used</h1>
 
     
     <span class="article-date">2020-09-24</span>
     
 
     <div class="article-content">
-      <h1 id="introduction">Introduction</h1>
+      <h1 id="code-used">Code used</h1>
 <pre><code class="language-{r" data-lang="{r">library(devtools)
 library(decon)
 library(ggplot2)
@@ -80,6 +80,13 @@ library(tibble)
 library(ggthemes)
 library(RColorBrewer)
 Daily &lt;-read.csv('/cloud/project/content/post/Daily_shelter_occupancy_current.csv')
+</code></pre><pre><code class="language-{r" data-lang="{r">
+ggplot(data = Daily, aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) + 
+  geom_point(aes(fill = SECTOR)) + 
+  geom_violin(scale=&quot;area&quot;) + 
+  theme_solarized()
+</code></pre><pre><code class="language-{r" data-lang="{r">ggplot(data = Daily, aes(x = SHELTER_CITY, y = SECTOR, color = SHELTER_CITY)) +
+  geom_point(aes(stat = 'identity')) 
 </code></pre>
     </div>
   </article>

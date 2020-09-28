@@ -1,0 +1,25 @@
+---
+date: '2020-09-24T21:13:14-05:00'
+title: Code Used
+---
+
+
+
+<div id="code-used" class="section level1">
+<h1>Code used</h1>
+<pre class="r"><code>library(devtools)
+library(decon)
+library(ggplot2)
+library(tibble)
+library(ggthemes)
+library(RColorBrewer)
+Daily &lt;-read.csv(&#39;/cloud/project/content/post/Daily_shelter_occupancy_current.csv&#39;)</code></pre>
+<pre class="r"><code>ggplot(data = Daily, aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) + 
+  geom_point(aes(fill = SECTOR)) + 
+  geom_violin(scale=&quot;area&quot;) + 
+  theme_solarized()</code></pre>
+<p><img src="/post/2016-12-30-hello-markdown_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data = Daily, aes(x = SHELTER_CITY, y = SECTOR, color = SHELTER_CITY)) +
+  geom_point(aes(stat = &#39;identity&#39;)) </code></pre>
+<p><img src="/post/2016-12-30-hello-markdown_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>

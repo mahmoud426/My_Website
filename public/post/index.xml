@@ -8,22 +8,22 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Sep 2020 21:13:14 -0500</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Introduction</title>
-      <link>/2020/09/24/introduction/</link>
+      <title>Code Used</title>
+      <link>/2020/09/24/code-used/</link>
       <pubDate>Thu, 24 Sep 2020 21:13:14 -0500</pubDate>
       
-      <guid>/2020/09/24/introduction/</guid>
-      <description>Introduction The dataset I selected to use was the Daily Shelter Occupancy Data. I found it very interesting to find out which shelter sector&amp;rsquo;s are more or less catered for through analysing their excess capacity. I found this very interesting as I have made use of the violin geom in order to add the demension of the capacity density&amp;rsquo;s</description>
+      <guid>/2020/09/24/code-used/</guid>
+      <description>Code used library(devtools) library(decon) library(ggplot2) library(tibble) library(ggthemes) library(RColorBrewer) Daily &amp;lt;-read.csv(&#39;/cloud/project/content/post/Daily_shelter_occupancy_current.csv&#39;) ggplot(data = Daily, aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) + geom_point(aes(fill = SECTOR)) + geom_violin(scale=&amp;quot;area&amp;quot;) + theme_solarized() ggplot(data = Daily, aes(x = SHELTER_CITY, y = SECTOR, color = SHELTER_CITY)) + geom_point(aes(stat = &#39;identity&#39;)) </description>
     </item>
     
     <item>
-      <title>The Capacities Of Different Homeless Shelter Sectors</title>
-      <link>/2020/09/24/the-capacities-of-different-homeless-shelter-sectors/</link>
+      <title>Understanding And Analyzing The Capacities Of Different Homeless Shelter Sectors In The Greater Toronto Area</title>
+      <link>/2020/09/24/understanding-and-analyzing-the-capacities-of-different-homeless-shelter-sectors-in-the-greater-toronto-area/</link>
       <pubDate>Thu, 24 Sep 2020 21:13:14 -0500</pubDate>
       
-      <guid>/2020/09/24/the-capacities-of-different-homeless-shelter-sectors/</guid>
+      <guid>/2020/09/24/understanding-and-analyzing-the-capacities-of-different-homeless-shelter-sectors-in-the-greater-toronto-area/</guid>
       <description>Abstract This is a statistical analysis of the capacity of homeless shelters in the City of Toronto. This analysis aims to find the different capacities in homeless shelter sectors. This will alow for a better understanding of which sectors have excess capacities and which are struggling to meet the demand.
- Introduction Homelesness is a serious issue around the country and Toronto is not exempt from that. On any given night there are 9,200 homeless people in Toronto^1 in need of a place to stay.</description>
+ Introduction Homelesness is a serious issue around the country and Toronto is not exempt from this. On any given night there are 9,200 homeless people in Toronto in need of a place to stay.</description>
     </item>
     
     <item>

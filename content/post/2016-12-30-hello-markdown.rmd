@@ -1,0 +1,28 @@
+---
+date: '2020-09-24T21:13:14-05:00'
+title: Code Used
+---
+
+# Code used
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library(devtools)
+library(decon)
+library(ggplot2)
+library(tibble)
+library(ggthemes)
+library(RColorBrewer)
+Daily <-read.csv('/cloud/project/content/post/Daily_shelter_occupancy_current.csv')
+```
+
+```{r echo=TRUE, warning=FALSE}
+
+ggplot(data = Daily, aes(x = SECTOR, y = CAPACITY, fill = SECTOR)) + 
+  geom_point(aes(fill = SECTOR)) + 
+  geom_violin(scale="area") + 
+  theme_solarized()
+```
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+ggplot(data = Daily, aes(x = SHELTER_CITY, y = SECTOR, color = SHELTER_CITY)) +
+  geom_point(aes(stat = 'identity')) 
+```
